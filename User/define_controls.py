@@ -5,7 +5,10 @@ class Define_Controls:
 	def __init__(self):
 		self.QuitGame = [pygame.K_ESCAPE]
 		self.Fullscreen = [pygame.K_F11]
-		self.ResetNoise = [pygame.K_r]
+		self.ResetGrid = [pygame.K_r]
+		self.SwitchDisplay = [pygame.K_s]
+		self.ToggleGrid = [pygame.K_q]
+		self.TogglePoints = [pygame.K_e]
 		
 		self.PressedKeys = {}
 	

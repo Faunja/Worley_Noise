@@ -15,8 +15,14 @@ def update_key_down(Key):
 			WorleyNoise.DisplayOffset = [int((max(Display.WindowSize) - min(Display.WindowSize)) / 2), 0]
 		else:
 			WorleyNoise.DisplayOffset = [0, int((max(Display.WindowSize) - min(Display.WindowSize)) / 2)]
-	if Key in Controls.ResetNoise:
-		WorleyNoise.create_noise()
+	if Key in Controls.ResetGrid:
+		WorleyNoise.create_grid()
+	if Key in Controls.SwitchDisplay:
+		WorleyNoise.DisplayDiagram = not WorleyNoise.DisplayDiagram
+	if Key in Controls.ToggleGrid:
+		WorleyNoise.DisplayGrid = not WorleyNoise.DisplayGrid
+	if Key in Controls.TogglePoints:
+		WorleyNoise.DisplayPoints = not WorleyNoise.DisplayPoints
 
 def event_handler():
 	for event in pygame.event.get():
