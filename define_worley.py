@@ -32,11 +32,11 @@ class define_worley:
 					for GridX in range(int(XPosition), int(XPosition) + 3):
 						LocalValues.append(((self.Grid[GridY][GridX][0] - XPosition) ** 2 + (self.Grid[GridY][GridX][1] - YPosition) ** 2) ** (1 / 2))
 						LocalColors.append(self.Grid[GridY][GridX][2])
+				self.Diagram[Y][X] = LocalColors[LocalValues.index(min(LocalValues))]
 				if min(LocalValues) > 1:
 					self.Noise[Y][X] = (255, 255, 255)
 					continue
 				self.Noise[Y][X] = (int(min(LocalValues) * 255), int(min(LocalValues) * 255), int(min(LocalValues) * 255))
-				self.Diagram[Y][X] = LocalColors[LocalValues.index(min(LocalValues))]
 	
 	def update_display(self):
 		self.DisplaySize = int(min(Display.WindowSize) / self.CellSize)
